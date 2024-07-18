@@ -26,4 +26,4 @@ console.log(input);
 
 console.log("--------");
 
-console.log(await parser.parse(res));
+console.log(await parser.parse(res)); // parse将字符串转为json

@@ -7,7 +7,7 @@ const tools = [new Calculator(), serpAPI];
 
 const executor = await initializeAgentExecutorWithOptions(tools, chatModel, {
   agentType: "openai-functions",
-  verbose: true,
+  verbose: true, // 可以看到log
 });
 
 const result = await executor.run("张学友 11 月有演唱会吗");

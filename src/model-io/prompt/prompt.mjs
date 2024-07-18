@@ -22,24 +22,21 @@ import { PromptTemplate, PipelinePromptTemplate } from "langchain/prompts";
 // init();
 
 const promptComposition = async () => {
-  const fullPrompt = PromptTemplate.fromTemplate(`{introduction}
-
-{example}
-
-{start}`);
+  const fullPrompt = PromptTemplate.fromTemplate(`{introduction} {example} {start}`);
 
   const introductionPrompt = PromptTemplate.fromTemplate(
     `You are impersonating {person}.`,
   );
 
-  const examplePrompt =
-    PromptTemplate.fromTemplate(`Here's an example of an interaction:
-Q: {example_q}
-A: {example_a}`);
+  const examplePrompt = PromptTemplate.fromTemplate(`Here's an example of an interaction:
+    Q: {example_q}
+    A: {example_a}`
+  );
 
   const startPrompt = PromptTemplate.fromTemplate(`Now, do this for real!
-Q: {input}
-A:`);
+    Q: {input}
+    A:`
+  );
 
   const composedPrompt = new PipelinePromptTemplate({
     pipelinePrompts: [

@@ -7,7 +7,7 @@ const fn = async (msg) => {
       {
         name: "get_current_weather",
         description: "Get the current weather in a given location",
-        parameters: {
+        parameters: { // function需要的参数
           type: "object",
           properties: {
             location: {
@@ -18,7 +18,7 @@ const fn = async (msg) => {
               type: "string",
               description: "The date in YYYY-MM-DD format",
             },
-            unit: { type: "string", enum: ["celsius", "fahrenheit"] },
+            unit: { type: "string", enum: ["celsius", "fahrenheit"] }, // celsius：摄氏度
           },
           required: ["location"],
         },
@@ -48,6 +48,6 @@ const fn = async (msg) => {
   return callback;
 };
 
-//  await fn("跟李华说我下周过去取论文");
+//  await fn("跟李华说我下周过去取论文"); // 第二个function
 
 fn("今天是 2022-10-10，下周三北京天气怎么样");

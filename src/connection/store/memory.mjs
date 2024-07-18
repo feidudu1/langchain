@@ -8,4 +8,4 @@ const vectorStore = await MemoryVectorStore.fromTexts(
 );
 
 const res = await vectorStore.similaritySearch("hello", 1);
-console.log(res);
+console.log(res); // [Document {pageContent: 'Hello world', metadata: {id: 2}}]
